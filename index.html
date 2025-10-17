@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Arithmetic Calculator</title>
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Load Tailwind for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="calculator-container">
+        <h1 class="text-xl font-bold mb-4 text-center text-gray-700">Standard Calculator</h1>
+
+        <!-- Display Screen -->
+        <input type="text" id="display" value="0" disabled>
+
+        <!-- Button Grid (5 Rows x 4 Columns) -->
+        <div class="grid-container">
+            <!-- Row 1: Functions (Reciprocal, Square, Cube, Square Root) -->
+            <button class="btn btn-function-top" onclick="calculateReciprocal()">1/x</button>
+            <button class="btn btn-function-top" onclick="calculateSquare()">x²</button>
+            <button class="btn btn-function-top" onclick="calculateCube()">x³</button>
+            <button class="btn btn-function-top" onclick="calculateSquareRoot()">√x</button>
+
+            <!-- Row 2: Clear Entry, Clear (Reset), Backspace, Divide -->
+            <button class="btn btn-top-action" onclick="clearEntry()">CE</button>
+            <button class="btn btn-top-action" onclick="clearDisplay()">C</button>
+            <button class="btn btn-top-action" onclick="backspace()">⌫</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('/')">/</button>
+
+            <!-- Row 3: 7, 8, 9, Multiply -->
+            <button class="btn btn-number" onclick="appendToDisplay('7')">7</button>
+            <button class="btn btn-number" onclick="appendToDisplay('8')">8</button>
+            <button class="btn btn-number" onclick="appendToDisplay('9')">9</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('*')">x</button>
+
+            <!-- Row 4: 4, 5, 6, Subtract -->
+            <button class="btn btn-number" onclick="appendToDisplay('4')">4</button>
+            <button class="btn btn-number" onclick="appendToDisplay('5')">5</button>
+            <button class="btn btn-number" onclick="appendToDisplay('6')">6</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('-')">-</button>
+
+            <!-- Row 5: 1, 2, 3, Add -->
+            <button class="btn btn-number" onclick="appendToDisplay('1')">1</button>
+            <button class="btn btn-number" onclick="appendToDisplay('2')">2</button>
+            <button class="btn btn-number" onclick="appendToDisplay('3')">3</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('+')">+</button>
+
+            <!-- Row 6: Sign Change, 0, Decimal, Equals -->
+            <button class="btn btn-number" onclick="appendToDisplay('-')">+/-</button>
+            <button class="btn btn-number" onclick="appendToDisplay('0')">0</button>
+            <button class="btn btn-decimal" onclick="appendToDisplay('.')">.</button>
+            <button class="btn btn-equals" onclick="calculateResult()">=</button>
+        </div>
+        
+        <p id="error-message" class="text-center text-sm text-red-500 mt-4 h-5"></p>
+    </div>
+
+    <!-- Link the external JavaScript file at the end of the body -->
+    <script src="js/script.js"></script>
+</body>
+</html>
